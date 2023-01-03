@@ -1,0 +1,58 @@
+<?php
+require 'config.php';
+session_start();
+if(!empty($_SESSION["id"])){
+  header("Location: index.php");
+}
+if(isset($_POST["submit"])){
+  $name = $_POST["name"];
+  $usn = $_POST["USN"];
+  $email = $_POST["email"];
+  $password = $_POST["password"];
+  $confirmpassword = $_POST["confirmpassword"];
+  $hashed_pass=password_hash($password,PASSWORD_DEFAULT);
+  $hashed_confirm_pass=password_hash($confirmpassword,PASSWORD_DEFAULT);
+  $duplicate = mysqli_query($conn, "SELECT * FROM studentinfo WHERE usn = '$usn' OR email = '$email'");
+  if(mysqli_num_rows($duplicate) > 0){
+    echo
+    "<script> alert('Username or Email Has Already Taken'); </script>";
+  }
+  else{
+    if($password == $confirmpassword){
+      $query = "INSERT INTO studentinfo VALUES('','$name','$usn','$email','$hashed_pass','$hashed_confirm_pass')";
+      mysqli_query($conn, $query);
+      echo
+      "<script> alert('Registration Successful'); </script>";
+    }
+    else{
+      echo
+      "<script> alert('Password Does Not Match'); </script>";
+    }
+  }
+}
+?>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Registration</title>
+  </head>
+  <body>
+    <h2>Registration</h2>
+    <form class="" action="" method="post" autocomplete="off">
+      <label for="name">Name : </label>
+      <input type="text" name="name" id = "name" required value=""> <br>
+      <label for="USN">USN : </label>
+      <input type="text" name="USN" id = "USN" required value=""> <br>
+      <label for="email">Email : </label>
+      <input type="email" name="email" id = "email" required value=""> <br>
+      <label for="password">Password : </label>
+      <input type="password" name="password" id = "password" required value=""> <br>
+      <label for="confirmpassword">Confirm Password : </label>
+      <input type="password" name="confirmpassword" id = "confirmpassword" required value=""> <br>
+      <button type="submit" name="submit">Register</button>
+    </form>
+    <br>
+    <a href="login.php">Login</a>
+  </body>
+</html>
