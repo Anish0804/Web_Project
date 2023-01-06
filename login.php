@@ -39,17 +39,17 @@ if(isset($_POST["submit"])){
       <div class="card">
         <div class="inner-box">
           <div class="card-front">
-            <h2>Login</h2>
+            <h2>LOGIN</h2>
             <form class="" action="" method="post" autocomplete="off">
               
               <input type="text" name="usn" id="usn" class="input-box" placeholder="Enter your USN" > <br>
               
               <input type="password" name="password" id="password" class="input-box" placeholder="Password" > <br>
               
-              <button type="submit" name="submit">SUBMIT</button>
-              
+              <button type="submit" class="main-btn" name="submit">SUBMIT</button>
+
               <a href="registration.php">
-                <button type="button" class="btn" onclick="registration.php">REGISTER</button>
+                <button type="button" class="side-btn" onclick="registration.php">REGISTER</button>
               </a>
 
             </form>
