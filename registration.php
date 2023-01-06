@@ -58,10 +58,10 @@ if(isset($_POST["submit"])){
               
               <input type="password" name="confirmpassword" id="confirmpassword" class="input-box" placeholder="Confirm Password" required value=""> <br>
 
-              <button type="submit" name="submit">SUBMIT</button>
-              
+              <button type="submit" class="main-btn" name="submit">SUBMIT</button>
+
               <a href="login.php">
-                <button type="button" class="btn" onclick="login.php">GO TO LOGIN</button>
+                <button type="button" class="side-btn" onclick="login.php">GO TO LOGIN</button>
               </a>
             </form>
             <br>
