@@ -112,7 +112,7 @@ body{
     </h3>
     <!--<a class="showmore" href="#">ReadMore</a>-->
     <!--<input type="button" value="fetchdata" onclick=opengoogle(textdetails[${i}])>-->
-    <a href="displaydetails.html" onclick=opengoogle(textdetails[${i}])>showfull</a>
+    <a href="displaydetails.html" onclick=opengoogle(textdetails[${i}])>ReadMore</a>
   </div><br>` ; 
   var dynamic = document.querySelector('.container');  
   dynamic.appendChild(divelement);
