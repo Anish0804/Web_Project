@@ -79,7 +79,7 @@ h2{
 
 button{
     width:100%;
-    background: transparent;
+    
     border:transparent;
     margin: 42px 0 2px;
     height: 39px;
@@ -88,8 +88,18 @@ button{
     padding: 0 12px;
     box-sizing: border-box;
     outline:none;
-    color:#08375c;
+    
     box-shadow:  5px 5px 5px -1px rgba(10, 99, 169, 0.16),
                 -5px -5px 5px -1px rgba(255, 255, 255, 0.70); 
     cursor: pointer;
+}
+
+.main-btn{
+    background: #08528a;
+    color:#ffffff;
+}
+
+.side-btn{
+    background: transparent;
+    color:#08375c;
 }
