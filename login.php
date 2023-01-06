@@ -32,17 +32,32 @@ if(isset($_POST["submit"])){
   <head>
     <meta charset="utf-8">
     <title>Login</title>
+    <link rel="stylesheet" href="css/loginstyle.css">
   </head>
   <body>
-    <h2>Login</h2>
-    <form class="" action="" method="post" autocomplete="off">
-      <label for="usn">USN : </label>
-      <input type="text" name="usn" id = "usn" > <br>
-      <label for="password">Password : </label>
-      <input type="password" name="password" id = "password" > <br>
-      <button type="submit" name="submit">Login</button>
-    </form>
-    <br>
-    <a href="registration.php">Registration</a>
+  <div class="container">
+      <div class="card">
+        <div class="inner-box">
+          <div class="card-front">
+            <h2>Login</h2>
+            <form class="" action="" method="post" autocomplete="off">
+              
+              <input type="text" name="usn" id="usn" class="input-box" placeholder="Enter your USN" > <br>
+              
+              <input type="password" name="password" id="password" class="input-box" placeholder="Password" > <br>
+              
+              <button type="submit" name="submit">SUBMIT</button>
+              
+              <a href="registration.php">
+                <button type="button" class="btn" onclick="registration.php">REGISTER</button>
+              </a>
+
+            </form>
+            <br>
+            
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
