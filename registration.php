@@ -2,7 +2,7 @@
 require 'config.php';
 session_start();
 if(!empty($_SESSION["usn"])){
-  header("Location: index.php");
+  header("Location: index1.php");
 }
 if(isset($_POST["submit"])){
   $name = $_POST["name"];
@@ -23,12 +23,10 @@ if(isset($_POST["submit"])){
       mysqli_query($conn, $query);
      
       header("Location: login.php");
-      echo
-      "<script> alert('Registration Successful'); </script>";
+      echo "<script> alert('Registration Successful'); </script>";
     }
     else{
-      echo
-      "<script> alert('Password Does Not Match'); </script>";
+      echo "<script> alert('Password Does Not Match'); </script>";
     }
   }
 }
@@ -38,10 +36,42 @@ if(isset($_POST["submit"])){
   <head>
     <meta charset="utf-8">
     <title>Registration</title>
+
+    <link rel="stylesheet" href="css/preloginstyle.css">
     <link rel="stylesheet" href="css/registrationstyle.css">
+    <link rel="stylesheet" href="css/navbarstyle.css">
+
   </head>
   <body>
+    <header>
+      <div class="logo">MCE Portal</div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+          <ul>
+                <li>
+                    <a href="" class="active">Home</a>
+                </li>
+                <li>
+                    <a href="">Schedule</a>
+                </li>
+                <li>
+                    <a href="grievance.php">Grievance</a>
+                </li>
+                <li>
+                    <a href="">About</a>
+                </li>
+                <!-- <li>
+                    <a href="">Link 4</a>
+                </li> -->
+            </ul>
+        </nav>
+    </header>
     <div class="container">
+      
       <div class="card">
         <div class="inner-box">
           <div class="card-front">
